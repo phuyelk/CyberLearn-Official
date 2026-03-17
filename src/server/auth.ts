@@ -22,6 +22,7 @@ declare module "next-auth/jwt" {
 }
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET ?? "cyberlearn-default-secret-key-2024",
   adapter: PrismaAdapter(db) as NextAuthOptions["adapter"],
   session: { strategy: "jwt" },
   pages: {
