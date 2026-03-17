@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-app: #0a0a0b;
+  --bg-panel: #111113;
+  --bg-elevated: #1a1a1e;
+  --border: #242428;
+  --border-focus: #3a3a42;
+  --text-primary: #ededef;
+  --text-secondary: #8b8b99;
+  --text-muted: #4a4a56;
+  --accent: #6e56cf;
+  --accent-soft: rgba(110, 86, 207, 0.13);
+  --success: #30a46c;
+  --warning: #f76b15;
+  --danger: #e5484d;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg-app);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(110, 86, 207, 0.3);
+  color: #ededef;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242428;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a42;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ededef;
+  -webkit-box-shadow: 0 0 0px 1000px #1a1a1e inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(110, 86, 207, 0.4), 0 0 8px rgba(110, 86, 207, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 8px rgba(110, 86, 207, 0.6), 0 0 20px rgba(110, 86, 207, 0.35);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes grid-glow {
+  0%, 100% {
+    opacity: 0.03;
+  }
+  50% {
+    opacity: 0.07;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-grid-glow {
+  animation: grid-glow 4s ease-in-out infinite;
+}
