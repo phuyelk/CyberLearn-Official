@@ -12,7 +12,7 @@ const LEVELS = [
 ] as const;
 
 export function getLevel(xp: number) {
-  let current = LEVELS[0]!;
+  let current: (typeof LEVELS)[number] = LEVELS[0]!;
   for (const entry of LEVELS) {
     if (xp >= entry.xpRequired) current = entry;
     else break;
